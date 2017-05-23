@@ -1,0 +1,152 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detalle del campero</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="page-show-record">
+  <ion-segment [(ngModel)]="section">
+    <ion-segment-button value="record-info">
+      Info
+    </ion-segment-button>
+    <ion-segment-button value="history-info">
+      Historial
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="section">
+    <ion-list *ngSwitchCase="'record-info'">
+      <div *ngFor="let record of record | async">
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="https://ionicframework.com/dist/preview-app/www/assets/img/avatar-ts-woody.png">
+          </ion-avatar>
+          <h2>{{record.name}}</h2>
+          <p><strong>Staff: </strong>{{record.staff}}</p>
+          <ion-note item-right>{{record.registrationdate}}</ion-note>
+          <span class="item-right-top {{record.paymentstatus}}">{{paymentbadge}}</span>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="md-calendar"></ion-icon>
+          {{record.birthdate}}
+          <div id="edad"> {{age}} años </div>
+        </ion-item>
+        <ion-item>
+          <ion-label class="no-ellipsis">
+            <strong> Observaciones: </strong> {{record.description}}
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="md-contact"></ion-icon>
+          <span text-capitalize>{{record.parent}}</span>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="md-call"></ion-icon>
+          <a href='tel:{{record.contacto}}'>{{record.contact}}</a>
+        </ion-item>
+      </div>
+    </ion-list>
+
+
+    <ion-list class="feed" *ngSwitchCase="'history-info'">
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="http://themesanytime.com/startui/demo/img/avatar-2-64.png">
+        </ion-avatar>
+        <h2><strong>Alex Clooney</strong> commpleted task <strong>Website</strong></h2>
+        <p>1 hours ago</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="http://themesanytime.com/startui/demo/img/avatar-2-64.png">
+        </ion-avatar>
+        <h2><strong>Alex Clooney</strong> commpleted task <strong>Website</strong></h2>
+        <p>2 hours ago</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="http://themesanytime.com/startui/demo/img/avatar-2-64.png">
+        </ion-avatar>
+        <h2><strong>Alex Clooney</strong> commpleted task <strong>Website</strong></h2>
+        <p>2 hours ago</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="http://themesanytime.com/startui/demo/img/avatar-2-64.png">
+        </ion-avatar>
+        <h2><strong>Alex Clooney</strong> commpleted task <strong>Website</strong></h2>
+        <p>2 hours ago</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="http://themesanytime.com/startui/demo/img/avatar-2-64.png">
+        </ion-avatar>
+        <h2><strong>Alex Clooney</strong> commpleted task <strong>Website</strong></h2>
+        <p>2 hours ago</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="http://themesanytime.com/startui/demo/img/avatar-2-64.png">
+        </ion-avatar>
+        <h2><strong>Alex Clooney</strong> commpleted task <strong>Website</strong></h2>
+        <p>2 hours ago</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="http://themesanytime.com/startui/demo/img/avatar-2-64.png">
+        </ion-avatar>
+        <h2><strong>Alex Clooney</strong> commpleted task <strong>Website</strong></h2>
+        <p>2 hours ago</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="http://themesanytime.com/startui/demo/img/avatar-2-64.png">
+        </ion-avatar>
+        <h2><strong>Alex Clooney</strong> commpleted task <strong>Website</strong></h2>
+        <p>2 hours ago</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="http://themesanytime.com/startui/demo/img/avatar-2-64.png">
+        </ion-avatar>
+        <h2><strong>Alex Clooney</strong> commpleted task <strong>Website</strong></h2>
+        <p>2 hours ago</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="http://themesanytime.com/startui/demo/img/avatar-2-64.png">
+        </ion-avatar>
+        <h2><strong>Alex Clooney</strong> commpleted task <strong>Website</strong></h2>
+        <p>2 hours ago</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="http://themesanytime.com/startui/demo/img/avatar-2-64.png">
+        </ion-avatar>
+        <h2><strong>Alex Clooney</strong> commpleted task <strong>Website</strong></h2>
+        <p>2 hours ago</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="http://themesanytime.com/startui/demo/img/avatar-2-64.png">
+        </ion-avatar>
+        <h2><strong>Alex Clooney</strong> commpleted task <strong>Website</strong></h2>
+        <p>2 hours ago</p>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="http://themesanytime.com/startui/demo/img/avatar-2-64.png">
+        </ion-avatar>
+        <h2><strong>Alex Clooney</strong> commpleted task <strong>Website</strong></h2>
+        <p>2 hours ago</p>
+      </ion-item>
+    </ion-list>
+  </div>
+
+
+
+</ion-content>

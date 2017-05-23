@@ -1,0 +1,48 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Capernaúm</ion-title>
+		<ion-buttons end>
+			<button ion-button icon-only (click)="popOver($event)">
+  			<ion-icon name="more"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="list-avatar-page">
+	<ion-list>
+
+		<ion-item-sliding *ngFor="let record of records | async">
+			<button ion-item (click)="showRecordPage(record.$key)">
+				<ion-avatar item-left>
+					<img src="https://ionicframework.com/dist/preview-app/www/assets/img/avatar-ts-woody.png">
+				</ion-avatar>
+				<h2 class='{{record.paymentstatus}}'>{{record.name}}</h2>
+				<p>{{record.staff}}</p>
+				<ion-note item-right>{{record.registrationdate}}</ion-note>
+			</button>
+			<ion-item-options side="left">
+				<button ion-button color="primary">
+						<ion-icon name="md-create"></ion-icon>
+					Editar
+					</button>
+				<button ion-button color="danger" (click)="deleteRecord(record.$key, record.name)">
+						<ion-icon name="md-trash"></ion-icon>
+						Eliminar
+					</button>
+			</ion-item-options>
+			<ion-item-options side="right">
+				<button ion-button color="secondary" (click)="addPayment(record.$key, record.payment)">
+						<ion-icon name="md-cash"></ion-icon>
+						Nuevo pago
+					</button>
+			</ion-item-options>
+		</ion-item-sliding>
+
+	</ion-list>
+
+	<ion-fab right bottom>
+		<button ion-fab color="primary" (click)="addRecord()"><ion-icon name="md-person-add"></ion-icon></button>
+	</ion-fab>
+
+</ion-content>

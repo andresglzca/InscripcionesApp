@@ -1,0 +1,16 @@
+import { NgModule } from '@angular/core';
+import { IonicModule } from 'ionic-angular';
+import { ShowRecord } from './show-record';
+
+@NgModule({
+  declarations: [
+    ShowRecord,
+  ],
+  imports: [
+    IonicModule.forChild(ShowRecord),
+  ],
+  exports: [
+    ShowRecord
+  ]
+})
+export class ShowRecordModule {}
